@@ -1,1 +1,39 @@
+pipeline {
+    agent any
 
+    stages {
+        stage("code") {
+            steps {
+                git branch: 'release', url: 'https://github.com/upendramdevops-rgb/E-com-app.git'
+            }
+        }
+
+        stage("build") {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+
+        stage('Unit Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('artifact') {
+          steps {
+            
+          }
+        }
+
+        stage("deploy") {
+          input {
+            message "can i deploy"
+            ok "yes you can"
+              }
+            steps {
+                sh "cp /var/lib/jenkins/workspace/pipeline-1/target/*.war /opt/apache-tomcat-9.0.71/webapps"
+            }
+        }
+    }
+}
