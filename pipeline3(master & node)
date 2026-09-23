@@ -1,0 +1,39 @@
+/* this pippeline has run in slave-node/agentnod and here we user environment block also */
+
+pipeline {
+    agent {
+     node {
+      label "slave"
+    environment {
+      name = "this pipe line run in slave-node"
+      }
+    
+    tools {
+        maven "mymaven"
+    }
+    stages {
+        stage("checkout") {
+           environment {
+                BRANCH = "main"
+            steps {
+                echo $name.
+                git "url of git repository"
+            }
+        }
+        stage("build") {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+        stage("artifact") {
+            steps {
+                // paste groovy script
+            }
+        }
+        stage("deploy") {
+            steps {
+                // paste groovy script
+            }
+        }
+    }
+}
