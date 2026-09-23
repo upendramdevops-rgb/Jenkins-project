@@ -1,0 +1,32 @@
+/* this is  a pipeline is run in controle node and stages are fetch code, 
+   build application using maven, store the artifact using a nexus and deploye the application using tomcat */
+
+pipeline {
+    agent any
+    tools {
+        maven "mymaven"
+    }
+    stages {
+        stage("checkout") {
+            steps {
+                git "url of git repository"
+            }
+        }
+        stage("build") {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+        stage("artifact") {
+            steps {
+                // paste groovy script
+            }
+        }
+        stage("deploy") {
+            steps {
+                // paste groovy script
+            }
+        }
+    }
+}
+
