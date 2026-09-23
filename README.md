@@ -58,3 +58,14 @@ node {
         }
     }
 }
+
+jenkins topic:-
+1. what is jenkins?
+2. what is a job and types?
+3. what is a cronjob?
+4. what is pipeline and types?
+5. what is difference between delivery and deployment?
+6. what is release manger?
+7. what is a RBAC?
+8. what is webhook, pollscm and build periodically?
+
