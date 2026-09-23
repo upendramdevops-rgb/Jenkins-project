@@ -1,0 +1,8 @@
+pipeline {
+  agent {
+    node {
+      label "dev"
+  stages {
+        stage("checkout") {
+          steps {
+            git 
