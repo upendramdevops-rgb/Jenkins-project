@@ -1,1 +1,22 @@
 
+pipeline {
+ agent any 
+ stages {
+   #stage-1
+   stage("stage-name") {
+      steps {
+       # action
+        }
+    }
+
+   stage-2
+   stage("stage-name") {
+     steps {
+      # action
+        }
+     }
+   }
+}
+
+
+# this is a basic pipeline code #
